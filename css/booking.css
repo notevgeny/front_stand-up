@@ -1,0 +1,96 @@
+.booking {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    color: var(--main);
+    background-color: var(--main-bg);
+}
+.container {
+    max-width: 1440px;
+    padding: 80px;
+}
+.booking__title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.booking__fieldset_user-info {
+    margin-bottom: 50px;
+}
+.booking__legend-title {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.booking__input-group {
+    display: flex;
+    gap: 8px;
+}
+.booking__input {
+    display: block;
+    max-width: 380px;
+    height: 44px;
+    width: 100%;
+}
+.booking__fieldset_comedians-info {
+    margin-bottom: 122px;
+}
+.booking__comedians-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.booking__comedian {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.booking__select {
+    height: 44px;
+    width: 100%;
+}
+
+.booking__select:invalid {
+    color: var(--gray);
+}
+  
+.booking__select:disabled {
+color: var(--gray);
+}
+
+.booking__select option {
+color: var(--main);
+}
+
+.booking__select_comedian {
+    max-width: 380px;
+}
+
+.booking__select_time {
+    max-width: 175px;
+}
+
+.booking__hall {
+    margin-left: 10px;
+}
+
+.booking__button_submit {
+    background-color: var(--yellow);
+    padding: 16px 36px;
+    border-radius: 36px;
+    border: 1px solid var(--yellow);
+}
+
+.booking__button_submit:hover {
+    border: 1px solid var(--hoverbtn);
+}
+
+.booking__button_submit:disabled {
+    border: 1px solid var(--gray);
+    background-color: var(--gray);
+    cursor: not-allowed;
+}
