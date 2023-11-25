@@ -7,6 +7,7 @@
 }
 .container {
     max-width: 1440px;
+    width: 100%;
     padding: 80px;
 }
 .booking__title {
@@ -32,21 +33,26 @@
     display: block;
     max-width: 380px;
     height: 44px;
+    line-height: 1.4;
+    font-size: 18px;
     width: 100%;
+    border-radius: 8px;
+    background-color: var(--white);
 }
 .booking__fieldset_comedians-info {
     margin-bottom: 122px;
 }
+
 .booking__comedians-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 .booking__comedian {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 20px;
 }
 
 .booking__select {
@@ -59,11 +65,11 @@
 }
   
 .booking__select:disabled {
-color: var(--gray);
+    color: var(--gray);
 }
 
 .booking__select option {
-color: var(--main);
+    color: var(--main);
 }
 
 .booking__select_comedian {
@@ -71,11 +77,14 @@ color: var(--main);
 }
 
 .booking__select_time {
-    max-width: 175px;
+    max-width: 183px;
 }
 
 .booking__hall {
     margin-left: 10px;
+    white-space: nowrap;
+    padding-right: 32px;
+    background: url('../img/gg_qr.svg') right/24px no-repeat;
 }
 
 .booking__button_submit {
@@ -93,4 +102,51 @@ color: var(--main);
     border: 1px solid var(--gray);
     background-color: var(--gray);
     cursor: not-allowed;
+}
+
+
+@media (max-width: 1024px) {
+    .booking__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .booking__fieldset_user-info {
+        margin-bottom: 40px;
+    }
+
+    .booking__fieldset_comedians-info {
+        margin-bottom: 82px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 80px;
+    }
+    .booking__input-group {
+        flex-direction: column;
+    }
+    .booking__input {
+        max-width: none;
+    }
+}
+
+@media (max-width: 680px) {
+    .container {
+        padding: 30px 16px;
+    };
+    .booking__title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+    .booking__comedian {
+        flex-wrap: wrap;
+    }
+    .booking__select_comedian {
+        max-width: none;
+    }
+    .booking__hall {
+        margin-left: 18px;
+    }
 }

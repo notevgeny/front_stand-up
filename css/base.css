@@ -79,11 +79,44 @@ fieldset {
 
 input,
 select {
+    line-height: 1.4;
     border-radius: 8px;
     background: var(--white);
-    /* border: 1px solid var(--white); */
+    border: 1px solid var(--white);
+    padding: 0 16px;
+}
+
+
+.ts-dropdown, .ts-control, .ts-control input {
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--main);
+    border-radius: 8px;
+    padding: 10px 16px 8px;
     border: none;
-    padding: 10px 16px;
+}
+
+.dropdown-active .ts-control {
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+}
+
+.ts-dropdown .active {
+    background-color: transparent;
+}
+
+.ts-wrapper.single .ts-control {
+    background: var(--white);
+    border: 1px solid var(--white);
+    box-shadow: none;
+}
+
+.ts-wrapper.single.dropdown-active .ts-control::after {
+    border-color: transparent transparent var(--main) transparent;
+}
+
+.ts-wrapper.single .ts-control::after {
+    border-color: var(--main) transparent transparent transparent;
 }
 
 input:focus,
