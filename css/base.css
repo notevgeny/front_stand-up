@@ -125,14 +125,6 @@ select:focus {
     outline: none;
 }
 
-input.valid {
-    border: 1px solid var(--valid);
-}
-
-input.invalid {
-    border: 1px solid var(--invalid);
-}
-
 select {
     cursor: pointer;
 }
@@ -155,4 +147,8 @@ select {
 
 ::placeholder {
     color: var(--gray);
+}
+
+.just-validate-error-label {
+    display: none;
 }

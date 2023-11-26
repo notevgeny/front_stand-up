@@ -34,6 +34,11 @@
     line-height: 1.2;
     margin-right: 8px;
 }
+
+.event__buttons {
+    margin: auto auto 0;
+}
+
 .event__button_reserve {
     font-size: 24px;
     line-height: 1.4;
@@ -49,6 +54,7 @@
     align-items: center;
     font-size: 18px;
     gap: 8px;
+    margin: auto;
 }
 
 .event__button_edit:hover,
@@ -98,11 +104,5 @@
         grid-template-columns: max-content max-content;
         gap: 10px;
         margin-bottom: 30px;
-    }
-    .event__buttons {
-        margin-top: auto;
-    }
-    .event__button_edit {
-        margin: auto;
     }
 }

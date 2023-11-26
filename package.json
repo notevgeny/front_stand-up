@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "inputmask": "^5.0.8",
+    "just-validate": "^4.3.0",
     "vite": "^5.0.0"
   },
   "dependencies": {

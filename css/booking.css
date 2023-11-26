@@ -39,6 +39,15 @@
     border-radius: 8px;
     background-color: var(--white);
 }
+
+.booking__input_valid {
+    border: 1px solid var(--valid);
+}
+
+.booking__input_invalid {
+    border: 1px solid var(--invalid);
+}
+
 .booking__fieldset_comedians-info {
     margin-bottom: 122px;
 }
