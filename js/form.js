@@ -1,8 +1,9 @@
 import Inputmask from 'inputmask';
 import JustValidate from 'just-validate';
 import { Notification } from './notification.js';
+import { sendData } from './api.js';
 
-export const initForm = (bookingForm, bookingInputFullname, bookingInputPhone, bookingInputTicket) => {
+export const initForm = (bookingForm, bookingInputFullname, bookingInputPhone, bookingInputTicket, changeSection, bookingComediansList) => {
 
     const validateForm = new JustValidate(bookingForm, {
         errorFieldCssClass: 'booking__input_invalid',
@@ -64,8 +65,13 @@ export const initForm = (bookingForm, bookingInputFullname, bookingInputPhone, b
             Notification.getInstance().show(errorMessage.slice(0, -2), false);
         });
 
-        bookingForm.addEventListener('submit', (e) => {
+        bookingForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            if (!validateForm.isValid) {
+                return;
+            }
+
             const data = {booking: []};
             const times = new Set();
             new FormData(bookingForm).forEach((value, field) => {
@@ -78,10 +84,34 @@ export const initForm = (bookingForm, bookingInputFullname, bookingInputPhone, b
                 } else {
                     data[field] = value;
                 }
-    
-                if ((times.size !== data.booking.length)) {
-                    Notification.getInstance().show('Нельзя быть одновременно на двух выступлениях', false);
-                }
             })
+
+            if ((times.size !== data.booking.length)) {
+                Notification.getInstance().show('Нельзя быть одновременно на двух выступлениях', false);
+                return;
+            } 
+
+            if (!times.size) {
+                Notification.getInstance().show('Вы не выбрали и/или время', false);
+                return;
+            }
+
+            const method = bookingForm.getAttribute('method');
+            let isSend = false;
+
+            if (method === 'PATCH') {
+                isSend = await sendData(method, data, data.ticketNumber);
+            } else {
+                isSend = await sendData(method, data);
+            }
+
+            if (isSend) {
+                Notification.getInstance().show('Бронь принята', true);
+                changeSection();
+                bookingForm.reset();
+                bookingComediansList.textContent = '';
+            }
+
+            console.log(data);
         });
 }

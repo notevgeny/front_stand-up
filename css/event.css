@@ -11,7 +11,18 @@
     background-size: cover;
     color: var(--white);
     padding: 80px 30px 80px;
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 1;
+    visibility: visible;
 }
+
+.event__hidden {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+}
+
 .event__title {
     font-size: 100px;
     font-weight: 800;
@@ -39,9 +50,20 @@
     margin: auto auto 0;
 }
 
+.event__button {
+    /* /* line-height: 1.4; */
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.event__button_hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
 .event__button_reserve {
     font-size: 24px;
-    line-height: 1.4;
     color: var(--main);
     background-color: var(--yellow);
     padding: 16px 36px;
@@ -49,7 +71,6 @@
     margin-bottom: 40px;
 }
 .event__button_edit {
-    line-height: 1.4;
     display: flex;
     align-items: center;
     font-size: 18px;
