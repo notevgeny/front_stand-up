@@ -4,8 +4,14 @@ import { getComedians } from './js/api.js';
 import { initForm } from './js/form.js';
 import { createComedianBlock } from './js/comedians.js';
 import { initChangeSection } from './js/changeSection.js';
+import { initQrcodePage } from './js/qrcodePage.js';
 
 const init = async () => {
+
+    if (window.location.pathname.endsWith('qrcode.html')) {
+        initQrcodePage();
+        return;
+    }
 
     const amountComedians = document.querySelector('.event__info-item_comedians .event__info-number');
     const bookingForm = document.querySelector('.booking__form');

@@ -125,6 +125,32 @@
     cursor: not-allowed;
 }
 
+.booking__client-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 30px;
+    gap: 30px;
+}
+
+.booking__title-qrcode {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.booking__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.booking__list .booking__hall {
+    margin-left: 0;
+}
+
+.booking__item {
+    line-height: 2;
+}
 
 @media (max-width: 1024px) {
     .booking__title {

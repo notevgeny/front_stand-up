@@ -1,0 +1,34 @@
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_show {
+    display: flex;
+}
+
+.modal__content {
+    position: relative;
+    padding: 40px;
+    margin: auto;
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--gray);
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: var(--main);
+}
